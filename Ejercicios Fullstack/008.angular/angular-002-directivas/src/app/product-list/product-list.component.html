@@ -1,0 +1,61 @@
+
+<h1>Listado de productos</h1>
+
+<ul>
+  @for (name of names; track name) {
+    <li>{{name}}</li>
+  }
+</ul>
+
+
+<ol>
+  @for (product of products; track product.id) {
+    <li>{{product.title}} con precio {{product.price}} € y dispo {{product.available}}</li>
+  }
+</ol>
+
+<ul>
+  @for (email of emails; track email) {
+    <li>{{email}}</li>
+  } @empty {
+    <li>No se ha encontrado ningún resultado.</li>
+  }
+</ul>
+
+
+<ol>
+  <li *ngFor="let product of products">
+    {{product.title}}
+  </li>
+</ol>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Título</th>
+            <th scope="col">Precio (€)</th>
+            <th scope="col">Disponibilidad</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (product of products; track product.id) {
+            <tr>
+              <th scope="row">{{product.id}}</th>
+              <td>{{product.title}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.available}}</td>
+              <td>
+                <button class="btn btn-primary">Ver</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

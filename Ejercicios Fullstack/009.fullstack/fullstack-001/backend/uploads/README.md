@@ -1,0 +1,1 @@
+Carpeta para almacenar imágenes subidas desde el frontend hacia el backend.
